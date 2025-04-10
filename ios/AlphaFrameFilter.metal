@@ -14,7 +14,7 @@ extern "C" {
         float4 alphaFrame(sampler source, sampler mask) {
             float4 color = source.sample(source.coord());
             float opacity = mask.sample(mask.coord()).r;
-            return float4(color.rgb, opacity);
+            return float4(color.rgb, color.r);
         }
     }
 }

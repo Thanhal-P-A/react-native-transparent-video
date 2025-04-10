@@ -165,7 +165,7 @@ class TransparentVideoView : UIView {
     let composition = AVMutableVideoComposition(asset: asset, applyingCIFiltersWithHandler: { request in
       do {
         let (inputImage, maskImage) = request.sourceImage.verticalSplit()
-        let outputImage = try filter.process(inputImage, mask: maskImage)
+        let outputImage = try filter.process(request.sourceImage)
         return request.finish(with: outputImage, context: nil)
       } catch {
         os_log("Video composition error: %s", String(describing: error))
@@ -173,7 +173,7 @@ class TransparentVideoView : UIView {
       }
     })
 
-    composition.renderSize = asset.videoSize.applying(CGAffineTransform(scaleX: 1.0, y: 0.5))
+    composition.renderSize = asset.videoSize
     return composition
   }
 

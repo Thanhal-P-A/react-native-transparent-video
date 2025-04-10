@@ -256,7 +256,7 @@ public class AlphaMovieView extends GLTextureView {
         if (isPacked) {
             // Packed videos are assumed to be contain the alpha channel on the right side of the
             // original video, so the actual video width is half of the whole video
-            videoHeight /= 2.0f;
+            videoHeight /= 1.0f;
         }
 
         calculateVideoAspectRatio(videoWidth, videoHeight);
