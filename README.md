@@ -36,7 +36,7 @@ To achieve best compatibility across different Android devices and versions, ple
 
 ```js
 import { View, ImageSourcePropType, StyleSheet } from "react-native";
-import TransparentVideo from '@status-im/react-native-transparent-video';
+import TransparentVideo from 'react-native-transparent-video';
 
 type IVideoPlayer = {
     videoSrc: ImageSourcePropType
